@@ -12,8 +12,8 @@ class BaseConfig(BaseSettings):
 
 
 class AppConfig(BaseConfig):
-    name: str = "z-api"
-    display_name: str = "Z API"
+    name: str = "z-fastapi-template"
+    display_name: str = "Z-FastAPI-Template"
     version: str = "26.0.1"
 
     host: str = Field(alias="APP_HOST", default="0.0.0.0")
