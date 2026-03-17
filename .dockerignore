@@ -1,0 +1,17 @@
+Dockerfile
+.dockerignore
+
+compose.yml
+compose.override.yml
+
+.gitignore
+
+.env
+.env.dist
+.env.override
+
+.venv/
+ruff.toml
+.pre-commit-config.yaml
+
+README.md
