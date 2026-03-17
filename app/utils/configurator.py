@@ -14,7 +14,7 @@ class BaseConfig(BaseSettings):
 class AppConfig(BaseConfig):
     name: str = "z-api"
     display_name: str = "Z API"
-    version: str = "0.1.0"
+    version: str = "26.0.1"
 
     host: str = Field(alias="APP_HOST", default="0.0.0.0")
     port: int = Field(alias="APP_PORT", default=8000)

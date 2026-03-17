@@ -1,6 +1,6 @@
 [project]
 name = "fastapi-template"
-version = "0.1.0"
+version = "26.0.1"
 description = "FastAPI Boilerplate Template"
 authors = [
     { name = "Nikita Zagoruyko", email = "nik.nightness@gmail.com" }
