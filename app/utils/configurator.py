@@ -21,6 +21,9 @@ class AppConfig(BaseConfig):
 
     enable_docs: bool = Field(alias="APP_ENABLE_DOCS", default=False)
 
+    proxy_mode: bool = Field(alias="APP_ENABLE_PROXY_MODE", default=False)
+    trusted_proxy_ips: list[str] = Field(alias="APP_TRUSTED_PROXY_IPS", default=["*"])
+
 
 class SecurityConfig(BaseConfig):
     cors_allowed_origins: list[str] = Field(alias="CORS_ALLOWED_ORIGINS", default=["*"])
