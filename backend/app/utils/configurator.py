@@ -12,9 +12,9 @@ class BaseConfig(BaseSettings):
 
 
 class AppConfig(BaseConfig):
-    name: str = "z-fastapi-template"
-    display_name: str = "Z-FastAPI-Template"
-    version: str = "26.0.1"
+    name: str = "backend"
+    display_name: str = "Backend"
+    version: str = "26.0"
 
     host: str = Field(alias="APP_HOST", default="0.0.0.0")
     port: int = Field(alias="APP_PORT", default=8000)
