@@ -1,4 +1,8 @@
-# Python-generated files
+#
+# Backend .gitignore
+#
+
+### python related files
 __pycache__/
 *.py[oc]
 build/
@@ -6,11 +10,11 @@ dist/
 wheels/
 *.egg-info
 
-# Virtual environments
-.venv
+### virtual environments
+.venv/
 
-# IntelliJ
-.idea/
-
-# dotenv file
+### dotenv files
 .env
+
+### macos files
+# defined in root .gitignore

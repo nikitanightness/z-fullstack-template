@@ -1,22 +1,8 @@
-Dockerfile
-.dockerignore
+#
+# Backend .dockerignore
+#
 
-compose.yml
-compose.override.yml
-
-.gitignore
-
-.env
-.env.dist
-.env.override
-
-.venv/
-ruff.toml
-.pre-commit-config.yaml
-
-README.md
-
-# Python-generated files
+### python related files
 __pycache__/
 *.py[oc]
 build/
@@ -24,5 +10,51 @@ dist/
 wheels/
 *.egg-info
 
-# IntelliJ
-.idea/
+### virtual environments
+.venv/
+
+### dotenv files
+.env
+.env.dist
+.env.override
+
+### docker files
+Dockerfile
+.dockerignore
+
+### ignore files
+.gitignore
+
+### dev tools files
+ruff.toml
+
+### other
+README.md
+
+### macos files
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
