@@ -24,14 +24,15 @@ class AppConfig(BaseConfig):
 
 
 class DatabaseConfig(BaseConfig):
-    _db_url: PostgresDsn = Field(
+    # FIXME: Find a more cleaver solution (hide this var, it's required only for validation)
+    database_url: PostgresDsn = Field(
         alias="DATABASE_URL",
         default="postgresql+asyncpg://postgres:postgres@postgres:5432/database",
     )
 
     @property
     def db_url(self) -> str:
-        return str(self._db_url)
+        return str(self.database_url)
 
 
 class SecurityConfig(BaseConfig):
