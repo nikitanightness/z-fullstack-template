@@ -1,30 +1,35 @@
 from logging import getLogger
 from typing import Annotated, AsyncGenerator
 
-from fastapi import Depends, FastAPI, Request
+from fastapi import Depends, Request
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app import config
 from app.database.wrapper import DatabaseWrapper
+from app.web.state import AppState
 
 logger = getLogger(__name__)
 
 
-async def startup_database(app: FastAPI) -> None:
+async def setup_database(state: dict) -> None:
     logger.info("Initializing database...")
-    app.state.database = DatabaseWrapper(url=config.database.db_url)
+
+    state |= {
+        "db": DatabaseWrapper(url=config.database.db_url),
+    }
 
 
-async def shutdown_database(app: FastAPI) -> None:
-    database: DatabaseWrapper = app.state.database
+async def shutdown_database(state: AppState) -> None:
+    db = state["db"]
 
     logger.info("Disposing database engine...")
-    await database.dispose()
+    await db.dispose()
 
 
 async def get_db_session(request: Request) -> AsyncGenerator[AsyncSession, None]:
-    db: DatabaseWrapper = request.app.state.database
+    state: AppState = request.app.state
 
+    db = state["db"]
     async with db.session_factory() as session:
         try:
             yield session
